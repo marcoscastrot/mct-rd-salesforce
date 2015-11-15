@@ -43,6 +43,7 @@ To load all leads from your salesforce account:
 
 ```ruby
 MctRdSalesforce::Lead.new.load(auth_params)
+# => [{ id: "", FirstName: "", LastName: "", Email: "", Company: "", Website: "", Title: "", Phone: "", }]
 ```
 
 ##Get
@@ -51,15 +52,15 @@ To get a specific lead from your salesforce account:
 
 ```ruby
 MctRdSalesforce::Lead.new.get(lead_id, auth_params)
+# => { id: "", FirstName: "", LastName: "", Email: "", Company: "", Website: "", Title: "", Phone: "", }
 ```
 
 ##Create
 
 To create a lead on your salesforce account:
 
-Lead object
-
 ```ruby
+lead_object
 {
 	"name": firstname,
 	"lastName": lastname,
@@ -73,15 +74,15 @@ Lead object
 
 ```ruby
 MctRdSalesforce::Lead.new.create(auth_params, lead_object)
+# => "some id" when success, false when fail
 ```
 
 ##Update
 
 To update a lead from your salesforce account:
 
-Lead object
-
 ```ruby
+lead_object
 {
 	"id": id,
 	"name": firstname,
@@ -96,6 +97,7 @@ Lead object
 
 ```ruby
 MctRdSalesforce::Lead.new.update(auth_params, lead_object)
+# => true when success, false when fail
 ```
 
 ##Destroy
@@ -104,6 +106,7 @@ To destroy a specific lead from your salesforce account:
 
 ```ruby
 MctRdSalesforce::Lead.new.destroy(lead_id, auth_params)
+# => true when success, false when fail
 ```
 
 ##Test
