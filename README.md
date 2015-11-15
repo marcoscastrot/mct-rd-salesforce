@@ -20,10 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
 require 'mct-rd-salesforce'
+```
 
 Need to create auth params:
 
+```ruby
 auth_params
 { 
 	"username" => "your_username", 
@@ -32,25 +35,31 @@ auth_params
 	"client_id" => "your_client_id", 
 	"client_secret" => "your_client_id" 
 }
+```
 
-#Load
+##Load
 
 To load all leads from your salesforce account:
 
+```ruby
 MctRdSalesforce::Lead.new.load(auth_params)
+```
 
-#Get
+##Get
 
 To get a specific lead from your salesforce account:
 
+```ruby
 MctRdSalesforce::Lead.new.get(lead_id, auth_params)
+```
 
-#Create
+##Create
 
 To create a lead on your salesforce account:
 
 Lead object
 
+```ruby
 {
 	"name": firstname,
 	"lastName": lastname,
@@ -60,15 +69,19 @@ Lead object
 	"jobTitle": jobtitle,
 	"phone": phone,
 }
+```
 
+```ruby
 MctRdSalesforce::Lead.new.create(auth_params, lead_object)
+```
 
-#Update
+##Update
 
 To update a lead from your salesforce account:
 
 Lead object
 
+```ruby
 {
 	"id": id,
 	"name": firstname,
@@ -79,20 +92,27 @@ Lead object
 	"jobTitle": jobtitle,
 	"phone": phone,
 }
+```
 
+```ruby
 MctRdSalesforce::Lead.new.update(auth_params, lead_object)
+```
 
-#Destroy
+##Destroy
 
 To destroy a specific lead from your salesforce account:
 
+```ruby
 MctRdSalesforce::Lead.new.destroy(lead_id, auth_params)
+```
 
 ##Test
 
 To run the tests, just execute:
 
+```ruby
 rake test
+```
 
 ## Development
 
